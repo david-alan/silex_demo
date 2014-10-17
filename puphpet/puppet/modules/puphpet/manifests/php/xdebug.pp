@@ -21,8 +21,8 @@ class puphpet::php::xdebug (
   } else {
     # php 5.6 requires xdebug be compiled, for now
     case $::operatingsystem {
-      'debian': {$mod_dir = ''}
-      'ubuntu': {$mod_dir = '/usr/lib/php5/20131226'}
+      'debian': {$mod_dir = '/usr/lib/php5/20131226-zts'}
+      'ubuntu': {$mod_dir = '/usr/lib/php5/20131226-zts'}
       'redhat', 'centos': {$mod_dir = '/usr/lib64/php/modules'}
     }
 

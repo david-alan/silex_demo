@@ -1,0 +1,88 @@
+==> default: Running provisioner: shell...
+    default: Running: C:/Users/david/AppData/Local/Temp/vagrant-shell20141017-2228-1p6j5bm.sh
+==> default: stdin: is not a tty
+==> default: 
+==> default:  ____        ____  _   _ ____      _      generated using
+==> default: |  _ \ _   _|  _ \| | | |  _ \ ___| |_   ___ ___  _ __ ___
+==> default: | |_) | | | | |_) | |_| | |_) / _ \ __| / __/ _ \| '_ ` _ \
+==> default: |  __/| |_| |  __/|  _  |  __/  __/ |_ | (_| (_) | | | | | |
+==> default: |_|    \__,_|_|   |_| |_|_|   \___|\__(_)___\___/|_| |_| |_|
+==> default: 
+==> default: Running provisioner: shell...
+    default: Running: C:/Users/david/AppData/Local/Temp/vagrant-shell20141017-2228-14z383s.sh
+==> default: stdin: is not a tty
+==> default: Pre-existing private key found at 'puphpet/files/dot/ssh/root_id_rsa'
+==> default: Pre-existing private key found at 'puphpet/files/dot/ssh/id_rsa'
+==> default: Adding generated key to /root/.ssh/id_rsa
+==> default: Adding generated key to /root/.ssh/id_rsa.pub
+==> default: Adding generated key to /root/.ssh/authorized_keys
+==> default: Adding generated key to /home/vagrant/.ssh/id_rsa
+==> default: Adding generated key to /home/vagrant/.ssh/id_rsa.pub
+==> default: Adding generated key to /home/vagrant/.ssh/authorized_keys
+==> default: Running provisioner: shell...
+    default: Running: C:/Users/david/AppData/Local/Temp/vagrant-shell20141017-2228-84i3ya.sh
+==> default: stdin: is not a tty
+==> default: Running provisioner: shell...
+    default: Running: C:/Users/david/AppData/Local/Temp/vagrant-shell20141017-2228-1gsp0cc.sh
+==> default: stdin: is not a tty
+==> default: Running provisioner: puppet...
+==> default: Running Puppet with site.pp...
+==> default: stdin: is not a tty
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/composer/lib/facter/composer_home.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/concat/lib/facter/concat_basedir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/epel/lib/facter/os_maj_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/ip6tables_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/iptables_persistent_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/iptables_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/git/lib/facter/git_exec_path.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/git/lib/facter/git_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/php/lib/facter/php_fact_extension_dir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/php/lib/facter/php_fact_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/last_run.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/puppi_projects.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/windows_common_appdata.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rabbitmq/lib/facter/rabbitmq_erlang_cookie.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rvm/lib/facter/rvm_installed.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rvm/lib/facter/rvm_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/staging/lib/facter/staging_http_get.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/staging/lib/facter/staging_windir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/facter_dot_d.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/pe_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/puppet_vardir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/root_home.rb
+==> default: Notice: Compiled catalog for packer-virtualbox-iso.vagrantup.com in environment production in 21.00 seconds
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/composer/lib/facter/composer_home.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/concat/lib/facter/concat_basedir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/epel/lib/facter/os_maj_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/ip6tables_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/iptables_persistent_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/firewall/lib/facter/iptables_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/git/lib/facter/git_exec_path.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/git/lib/facter/git_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/php/lib/facter/php_fact_extension_dir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/php/lib/facter/php_fact_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/last_run.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/puppi_projects.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/puppi/lib/facter/windows_common_appdata.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rabbitmq/lib/facter/rabbitmq_erlang_cookie.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rvm/lib/facter/rvm_installed.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/rvm/lib/facter/rvm_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/staging/lib/facter/staging_http_get.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/staging/lib/facter/staging_windir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/facter_dot_d.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/pe_version.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/puppet_vardir.rb
+==> default: Info: Loading facts in /tmp/vagrant-puppet-3/modules-0/stdlib/lib/facter/root_home.rb
+==> default: Info: Applying configuration version '1413568745'
+==> default: Notice: /Stage[main]/Main/Exec[dotfiles]/returns: executed successfully
+==> default: Notice: /Stage[main]/Pyenv/Vcsrepo[/usr/local/pyenv]/revision: revision changed '3cde540ca00208fbfd0a5e7708c3053bc8cca9f5' to 'v0.4.0-20140404'
+==> default: Notice: /Stage[main]/Main/Php_pecl_mod[pecl_http]/Puphpet::Php::Pecl[pecl_http]/Php::Pecl::Module[pecl_http]/Exec[pecl-pecl_http]/returns: executed successfully
+==> default: Notice: /Stage[main]/Main/Puphpet::Php::Pecl[amqp]/Php::Pecl::Module[amqp]/Exec[pecl-amqp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Puphpet::Php::Xdebug/Exec[cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts]/returns: cp: cannot stat `/.puphpet-stuff/xdebug/modules/xdebug.so': No such file or directory
+==> default: Notice: /Stage[main]/Puphpet::Php::Xdebug/Puphpet::Php::Ini[xdebug/zend_extension]/Php::Augeas[XDEBUG/zend_extension-/usr/lib/php5/20131226-zts/xdebug.so]/Augeas[php_ini-XDEBUG/zend_extension-/usr/lib/php5/20131226-zts/xdebug.so]: Dependency Exec[cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts] has failures: true
+==> default: Notice: /Stage[main]/Main/Service[php5-fpm]: Dependency Exec[cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts] has failures: true
+==> default: Error: cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts returned 1 instead of one of [0]
+==> default: Error: /Stage[main]/Puphpet::Php::Xdebug/Exec[cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts]/returns: change from notrun to 0 failed: cp /.puphpet-stuff/xdebug/modules/xdebug.so /usr/lib/php5/20131226-zts returned 1 instead of one of [0]
+==> default: Warning: /Stage[main]/Puphpet::Php::Xdebug/Puphpet::Php::Ini[xdebug/zend_extension]/Php::Augeas[XDEBUG/zend_extension-/usr/lib/php5/20131226-zts/xdebug.so]/Augeas[php_ini-XDEBUG/zend_extension-/usr/lib/php5/20131226-zts/xdebug.so]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Main/Service[php5-fpm]: Skipping because of failed dependencies
+==> default: Notice: Finished catalog run in 65.55 seconds

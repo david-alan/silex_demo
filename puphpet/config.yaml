@@ -10,7 +10,7 @@ vagrantfile-local:
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                GZ3faueCBea6:
+                ACW5WIN9Iizv:
                     host: '9494'
                     guest: '22'
         post_up_message: ''
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            N2UCv5A9NoRr:
+            pvgB6AUWYTK5:
                 source: ./
                 target: /var/www
                 sync_type: default
@@ -78,7 +78,7 @@ apache:
     modules:
         - rewrite
     vhosts:
-        rKmtmUKAqkQK:
+        K0aJafyI59ZM:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -106,7 +106,7 @@ nginx:
         proxy_buffer_size: 128k
         proxy_buffers: '4 256k'
     vhosts:
-        MGuDAuSvOSuC:
+        UoWggrunnyg3:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -154,7 +154,7 @@ hhvm:
         error_reporting: '-1'
     timezone: null
 xdebug:
-    install: '1'
+    install: '0'
     settings:
         xdebug.default_enable: '1'
         xdebug.remote_autostart: '0'
@@ -170,7 +170,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        wnIEfywVL2Fn:
+        He4LI3hY08Qh:
             version: ''
 nodejs:
     install: '0'
@@ -179,20 +179,20 @@ python:
     install: '1'
     packages: {  }
     versions:
-        NzymzLgcqHyH:
+        eAj2ouZJMt2W:
             version: ''
 mysql:
     install: '1'
-    root_password: '123'
+    root_password: s3kr3tp@$$W0rdz
     adminer: 0
     databases:
-        y3CMCgUQ9lvN:
+        VBWEDKddCRnM:
             grant:
                 - ALL
-            name: dbname
+            name: fake_twitter
             host: localhost
-            user: dbuser
-            password: '123'
+            user: twitter_user
+            password: X7Ev3x7YKR87wVkqEYsUhdr8f9xmzj
             sql_file: ''
 postgresql:
     install: '0'
