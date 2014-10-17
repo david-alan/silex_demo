@@ -189,7 +189,7 @@ mysql:
         VBWEDKddCRnM:
             grant:
                 - ALL
-            name: fake_twitter
+            name: twitter_fake_db
             host: localhost
             user: twitter_user
             password: X7Ev3x7YKR87wVkqEYsUhdr8f9xmzj
