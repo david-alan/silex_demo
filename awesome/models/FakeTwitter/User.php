@@ -13,7 +13,19 @@ class User{
 	}
 
 	public function getName(){
-		return $this->name;
+		if(isset($this->name)){
+			return $this->name;
+		} else {
+			return self::getNameFromDB($this->id);
+		}
+	}
+
+	private function getNameFromDB($id){
+		$sql = "SELECT username FROM user WHERE id = ?";
+		$vars[] = $id;
+
+		$user_details = $this->app['db']->fetchAssoc($sql, $vars);
+		return $user_details['username'];
 	}
 
 	public function validateUser($name,$password){
@@ -79,7 +91,7 @@ class User{
 	}
 
 	private function setUserID($id){
-		$_SESSION['user_id'] = (int)$id;
+		$this->app['session']->set('user_id',(int)$id);
 		$this->id = (int)$id;
 	}
 
@@ -99,7 +111,12 @@ class User{
 		$this->name = $name;
 	}
 
-	public function test(){
-		echo 'test';
+	public function getUserID(){
+		if(isset($this->id)) {
+			return (int)$this->id;
+		} else {
+			$this->id = (int)$this->app['session']->get('user_id');
+			return $this->id;
+		}
 	}
 }

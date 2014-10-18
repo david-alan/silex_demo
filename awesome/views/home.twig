@@ -1,7 +1,43 @@
 {% extends "base.twig" %}
 
   {% block main %}
-  <h1>Welcome {{ user.name }}</h1>
-  
+  <h1>Welcome {{ user.name|striptags }}</h1>
+  {% if error is defined and error|length > 0 %}
+      <span class="help-block  has-error alert-danger">
+       <h4> Error:  {% for item in error %}
+                  {{ item }} <br />
+                {% endfor %}
+        </h4>
+      </span>
+     {% endif %}
+    <form method="POST" action="/home/">
+      <p>
+      <textarea name="message" rows="4"  cols="35" placeholder="Post your message here." ></textarea><br />
+    </p><p>
+      <input type="submit" name="submit" class="btn btn-primary">
+    </p>
+    </form>
     
+  {% endblock %}
+
+  {% block col_1 %}
+    {% for messageblock in user_messages %}
+    <div class="col-md-12">
+    <h1>{{ messageblock.username }}</h1>
+      {{ messageblock.message|striptags|nl2br }}
+      <br /><i> ~ {{ messageblock.ts }}</i>
+      <hr />
+    </div>
+    {% endfor %}
+  {% endblock %}
+
+  {% block col_2 %}
+    {% for messageblock in all_messages %}
+    <div class="col-lg-12">
+    <h1>{{ messageblock.username }}</h1>
+      {{ messageblock.message|striptags|nl2br }}
+      <br /><i> ~ {{ messageblock.ts }}</i>
+      <hr />
+    </div>
+    {% endfor %}
   {% endblock %}

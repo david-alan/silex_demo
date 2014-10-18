@@ -7,10 +7,11 @@
     <div class="form-group">           
 
     {% if error is defined and error|length > 0 %}
-      <span class="help-block  has-error">
-        Error:  {% for item in error %}
+      <span class="help-block  has-error alert-danger">
+        <h4>Error:  {% for item in error %}
                   {{ item }} <br />
                 {% endfor %}
+        </h4>
       </span>
      {% endif %} 
         <input type="text" class="form-control" id="inputUserName" name="username" placeholder="Username">

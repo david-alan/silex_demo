@@ -17,6 +17,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
+//Use sessions
+$app->register(new Silex\Provider\SessionServiceProvider());
+
 //connect with doctrine, but Silex doesn't really implement a full ORM 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
@@ -30,10 +33,9 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 
 
 //login form
-$app->get('/login/', function ($error = '') use ($app) {
+$app->get('/login/', function () use ($app) {
     return $app['twig']->render('login.twig', array(
-    	'error' => $error
-    ));
+     ));
 });
 
 //login form submitted
@@ -50,9 +52,7 @@ $app->post('/login/', function (Request $request) use ($app){
 			));
 	}
 	
-	return  $app['twig']->render('home.twig', array(
-			'user' => $u
-			));
+    return  $app->redirect('/home/');
 });
 
 //sign-up form
@@ -75,15 +75,64 @@ $app->post('/sign-up/', function(Request $request) use ($app){
     		));
     }
 
-    return  $app['twig']->render('home.twig', array(
-    	'user' => $u
-    		));
+    return  $app->redirect('/home/');
 });
 
+/*
 $app->get('/login/{name}', function ($name) use ($app) {
     return $app['twig']->render('login.twig', array(
         'name' => $name,
     ));
+});
+*/
+//post message
+$app->post('/home/', function (Request $request) use ($app){
+
+	$u = new FakeTwitter\User($app);
+	$user_id = $u->getUserID();
+
+	$username = $u->getName();
+
+	if($user_id == 0){ //user is not logged in
+		return $app['twig']->render('login.twig', array(
+     		));
+	}
+
+	$m = new FakeTwitter\Message($app);
+	$error = $m->addMessage($user_id, $request->get('message'));
+	$user_messages = $m->getMessages($user_id);
+	$all_messages  = $m->getMessages();
+
+	return $app['twig']->render('home.twig', array(
+    	'user' => $u,
+    	'error' => $error,
+    	'user_messages' => $user_messages,
+    	'all_messages' => $all_messages
+    		));
+});
+
+
+$app->get('/home/', function (Request $request) use ($app){
+
+	$u = new FakeTwitter\User($app);
+	$user_id = $u->getUserID();
+
+	$username = $u->getName();
+
+	if($user_id == 0){ //user is not logged in
+		return $app['twig']->render('login.twig', array(
+     		));
+	}
+
+	$m = new FakeTwitter\Message($app);	
+	$user_messages = $m->getMessages($user_id);
+	$all_messages  = $m->getMessages();
+
+	return $app['twig']->render('home.twig', array(
+    	'user' => $u,    	
+    	'user_messages' => $user_messages,
+    	'all_messages' => $all_messages
+    		));
 });
 
 
