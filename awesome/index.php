@@ -2,10 +2,17 @@
 
 require_once 'vendor/autoload.php';
 
+
 $app = new Silex\Application();
 
 $app['debug'] = true;
 
+//Use Twig for views
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/views',
+));
+
+//connect with doctrine, but Silex doesn't really implement a full ORM
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'dbname' => 'twitter_fake_db',
