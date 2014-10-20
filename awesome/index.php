@@ -1,144 +1,20 @@
 <?php
-
-//use composer's autoloader
-$loader = require_once 'vendor/autoload.php';
-//$loader->add('models', __DIR__.'/../models/');
-
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-
-$app = new Silex\Application();
-
-$app['debug'] = true;
-
-//Use Twig for views
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-//Use sessions
-$app->register(new Silex\Provider\SessionServiceProvider());
-
-//connect with doctrine, but Silex doesn't really implement a full ORM 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
-        'dbname' => 'twitter_fake_db',
-		'user' => 'twitter_user',
-		'password' => 'X7Ev3x7YKR87wVkqEYsUhdr8f9xmzj',
-		'host' => 'localhost',
-		'driver' => 'pdo_mysql',
-    ),
-));
-
-
-//login form
-$app->get('/login/', function () use ($app) {
-    return $app['twig']->render('login.twig', array(
-     ));
-});
-
-//login form submitted
-$app->post('/login/', function (Request $request) use ($app){
-    $username = $request->get('username');
-    $password = $request->get('password');
-
-    $u = new FakeTwitter\User($app);
-    $error = $u->validateUser($username, $password);
-
-	if(count($error)){ //there was an error registering the new user
-	 	return $app['twig']->render('login.twig', array(
-	 		'error' => $error
-			));
-	}
-	
-    return  $app->redirect('/home/');
-});
-
-//sign-up form
-$app->get('/sign-up/', function () use ($app) {
-    return $app['twig']->render('sign-up.twig', array(
-    ));
-});
-
-//sign-up form submitted
-$app->post('/sign-up/', function(Request $request) use ($app){
-	$username = $request->get('username');
-    $password = $request->get('password');
-     
-    $u = new FakeTwitter\User($app);
-    $error = $u->addUser($username, $password);
-    
-    if(count($error)){ //there was an error registering the new user
-     	return $app['twig']->render('sign-up.twig', array(
-     		'error' => $error
-    		));
-    }
-
-    return  $app->redirect('/home/');
-});
-
 /*
-$app->get('/login/{name}', function ($name) use ($app) {
-    return $app['twig']->render('login.twig', array(
-        'name' => $name,
-    ));
-});
+* I had everything in here, but I moved it to app.php.
+* Some tests run better without running $app->run().
+*
+* I should have created an environment variable to see
+* if it's running in a test or live. Probably something
+* like this:
+*
+*	if($env == 'test'){
+*		$app['debug'] = true;
+*	} else {
+*		$app->run();
+*	}
+*
 */
-//post message
-$app->post('/home/', function (Request $request) use ($app){
 
-	$u = new FakeTwitter\User($app);
-	$user_id = $u->getUserID();
-
-	$username = $u->getName();
-
-	if($user_id == 0){ //user is not logged in
-		return $app['twig']->render('login.twig', array(
-     		));
-	}
-
-	$m = new FakeTwitter\Message($app);
-	$error = $m->addMessage($user_id, $request->get('message'));
-	$user_messages = $m->getMessages($user_id);
-	$all_messages  = $m->getMessages();
-
-	return $app['twig']->render('home.twig', array(
-    	'user' => $u,
-    	'error' => $error,
-    	'user_messages' => $user_messages,
-    	'all_messages' => $all_messages
-    		));
-});
-
-
-$app->get('/home/', function (Request $request) use ($app){
-
-	$u = new FakeTwitter\User($app);
-	$user_id = $u->getUserID();
-
-	$username = $u->getName();
-
-	if($user_id == 0){ //user is not logged in
-		return $app['twig']->render('login.twig', array(
-     		));
-	}
-
-	$m = new FakeTwitter\Message($app);	
-	$user_messages = $m->getMessages($user_id);
-	$all_messages  = $m->getMessages();
-
-	return $app['twig']->render('home.twig', array(
-    	'user' => $u,    	
-    	'user_messages' => $user_messages,
-    	'all_messages' => $all_messages
-    		));
-});
-
-
-$app->get('/', function() use ($app) {
-    return 'test';
-});
+require_once 'app.php';
 
 $app->run();
-//echo 'end';

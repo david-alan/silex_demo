@@ -8,7 +8,11 @@ CREATE TABLE message (id INT NOT NULL auto_increment PRIMARY KEY, user_id INT NO
 
 -- seed database
 INSERT INTO user(username, password) VALUES('david','$2y$10$uTIqvpPL1txb/RZbupCpr.lgVwtFf6/Ba.C5HfxuEPurD1xi5I9YK'); -- "password"
+INSERT INTO user(username, password) VALUES('fred','$2y$10$uTIqvpPL1txb/RZbupCpr.lgVwtFf6/Ba.X5HfxuEPurD1xi5I9YK'); -- "password"
+INSERT INTO user(username, password) VALUES('john','$2y$10$uTIqvpPL1txb/RZbupCpr.lgVwtFf6/Ba.Y5HfxuEPurD1xi5I9YK'); -- "password"
 INSERT INTO message(user_id, message) VALUES(1,'Hello World');
 INSERT INTO message(user_id, message) VALUES(1,'Message 2');
 INSERT INTO message(user_id, message) VALUES(1,'Some extra message');
-INSERT INTO message(user_id, message) VALUES(2,'final message');
+INSERT INTO message(user_id, message) VALUES(2,'x message');
+INSERT INTO message(user_id, message) VALUES(2,'y message');
+INSERT INTO message(user_id, message) VALUES(3,'z message');

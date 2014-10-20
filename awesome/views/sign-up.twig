@@ -1,27 +1,25 @@
 {% extends "base.twig" %}
 
   {% block main %}
-  <h1>Create an Account</h1>
-  <form method="POST" action="/sign-up/">
-    
-    <div class="form-group">
-
-    {% if error is defined and error|length > 0 %}
-      <span class="help-block  has-error alert-danger">
+      <h1>Create an Account</h1>
+      <form method="POST" action="/sign-up/">
+      <div class="form-group">
+      {% if error is defined and error|length > 0 %}
+        <span class="help-block  has-error alert-danger">
         <h4>Error:  {% for item in error %}
-                  {{ item }} <br />
-                {% endfor %}
+                       {{ item }} <br />
+                    {% endfor %}
         </h4>
-      </span>
-     {% endif %}
+        </span>
+      {% endif %}
         <input type="text" class="form-control" id="inputUserName" name="username" placeholder="Username">
-    </div>
+      </div>
 
-    <div class="form-group">            
+      <div class="form-group">            
         <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-    </div>
+      </div>
 
-    <button type="submit" class="btn btn-primary">Create Account</button>
-  
-  </form>
+      <button type="submit" class="btn btn-primary">Create Account</button>
+
+      </form>
   {% endblock %}
