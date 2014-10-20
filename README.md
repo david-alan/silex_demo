@@ -10,4 +10,5 @@ Steps:
 
 3. run "vagrant ssh"
 
-4. import "setup_db.sql" into the mysql database (usernames and passwords are in puppet\config.yaml file)
+4. import "setup_db.sql" into the mysql database:
+     -- /usr/bin/mysql -u twitter_user -pX7Ev3x7YKR87wVkqEYsUhdr8f9xmzj twitter_fake_db < /var/www/awesome/setup_db.sql

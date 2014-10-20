@@ -50,7 +50,7 @@ class User
         }
     }
     
-      /**
+    /**
     * Retrieve a user's username from
     * the database.
     *
@@ -66,7 +66,7 @@ class User
         return $user_details['username'];
     }
 
-      /**
+    /**
     * Check to see if a user's login credentials 
     * are valid
     *
@@ -106,7 +106,7 @@ class User
         return $errors;
     }
 
-      /**
+    /**
     * When a user registers for the FakeTwitter
     * service, add him to the database. User must enter
     * a username and password, and the username must

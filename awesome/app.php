@@ -7,15 +7,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 $app = new Silex\Application();
 
-//Use Twig for views
+//use Twig for views
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views'
 ));
 
-//Use sessions
+//use sessions
 $app->register(new Silex\Provider\SessionServiceProvider());
 
-//connect with doctrine, but Silex doesn't really implement a full ORM 
+//connect with doctrine, but Silex doesn't really implement a full ORM
+//TODO: refactor this out into a config class or something
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'dbname'   => 'twitter_fake_db',
