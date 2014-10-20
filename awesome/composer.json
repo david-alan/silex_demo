@@ -3,7 +3,7 @@
         "silex/silex": "2.0.*@dev",
         "doctrine/dbal": "2.2.*",
         "symfony/twig-bridge": "~2.3",
-    	"phpunit/phpunit": "4.3.*",
+        "phpunit/phpunit": "4.3.*",
         "phpunit/dbunit": ">=1.2",
         "mockery/mockery": "0.9.*@dev"
     },
@@ -12,11 +12,11 @@
             "symfony/css-selector": ">=2.3,<2.4-dev"
     },
     "autoload": {
-    	"psr-0": {
-    		"FakeTwitter\\" : "models/",
-    		"FakeTwitter\\Tests" : "tests/"
+        "psr-0": {
+            "FakeTwitter\\" : "models/",
+            "FakeTwitter\\Tests" : "tests/"
 
-    	}
+        }
     }
 }
 

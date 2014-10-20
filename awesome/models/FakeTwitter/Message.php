@@ -9,14 +9,14 @@ namespace FakeTwitter;
 class Message
 {
 
-	/**
-	* Create a message.  Used dep. injection to
-	* make unit testing easier by passing in a
-	* mocked DB.
-	*
-	* @param object $app_db An instance of Doctrine's DBAL
-	* @return object Message
-	*/
+    /**
+    * Create a message.  Used dep. injection to
+    * make unit testing easier by passing in a
+    * mocked DB.
+    *
+    * @param object $app_db An instance of Doctrine's DBAL
+    * @return object Message
+    */
     public function __construct($app_db)
     {
         $this->app['db'] = $app_db;

@@ -7,11 +7,11 @@
 * if it's running in a test or live. Probably something
 * like this:
 *
-*	if($env == 'test'){
-*		$app['debug'] = true;
-*	} else {
-*		$app->run();
-*	}
+*    if($env == 'test'){
+*        $app['debug'] = true;
+*    } else {
+*        $app->run();
+*    }
 *
 */
 
